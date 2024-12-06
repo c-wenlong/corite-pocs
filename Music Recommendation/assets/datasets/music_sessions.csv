@@ -1,0 +1,101 @@
+index,id,name,keywords,rating
+1,347,Labels vs Publishers,record labels music publishers rights licensing distribution royalties contracts,8.5
+2,562,Understanding Royalties,streaming mechanical performance sync licensing revenue splits calculations,7.8
+3,891,Music Copyright Basics,intellectual property rights protection registration ownership songwriting publishing,8.2
+4,234,Digital Distribution Explained,streaming platforms aggregators release strategy digital sales promotion,7.9
+5,678,Artist Management 101,representation booking touring career development strategy networking,8.7
+6,123,Music Marketing Fundamentals,branding social media promotion strategy audience engagement content,8.4
+7,456,Sync Licensing Deep Dive,film tv advertising games placement licensing fees negotiations,7.6
+8,789,Recording Contracts Explained,deals agreements terms conditions advances royalties obligations rights,8.3
+9,321,Streaming Economics,revenue models platforms payments calculations distribution splits shares,7.5
+10,654,Live Performance Revenue,touring merchandise tickets sales booking fees venues promoters,8.8
+11,987,Music Publishing Deals,publishing agreements songwriting rights administration licensing collection,7.7
+12,246,Social Media for Musicians,content strategy engagement platforms algorithms reach promotion growth,8.9
+13,135,Building a Music Portfolio,career development strategy planning goals milestones achievements tracking,8.1
+14,579,Music Metadata Essentials,data management organization tracking rights ownership distribution identification,7.2
+15,802,Independent vs Major Labels,comparison advantages disadvantages deals support resources control independence,8.6
+16,463,Music Distribution Strategies,platforms timing promotion release planning marketing strategy digital,7.9
+17,791,Revenue Stream Diversification,income sources opportunities expansion strategy planning growth sustainability,8.4
+18,248,Music Licensing for Beginners,rights clearance usage permissions fees negotiations contracts terms,7.8
+19,635,Building a Fan Base,audience development engagement retention strategy community growth,9.1
+20,159,Music Business Networking,connections relationships industry events conferences meetings opportunities,8.5
+21,753,Digital Music Marketing,online promotion platforms strategy content planning campaigns analytics,8.7
+22,426,Music Copyright Registration,protection legal rights documentation process fees ownership proof,7.4
+23,894,Touring Basics,live performance planning logistics costs venues promotion booking,8.8
+24,317,Music Production Rights,studio recording ownership splits agreements credits documentation legal,7.6
+25,682,Merchandise Revenue,products sales strategy design production distribution pricing profit,8.2
+26,145,Music Industry Trends,market analysis future predictions opportunities challenges adaptation strategy,8.3
+27,538,Artist Brand Building,identity development strategy consistency messaging values presentation,8.9
+28,963,Music Distribution Platforms,comparison features costs benefits reach analytics promotion tools,7.8
+29,274,Music Publishing Administration,rights management collection reporting payments tracking documentation,7.5
+30,756,Digital Music Promotion,marketing strategy platforms advertising targeting campaigns measurement,8.6
+31,189,Music Business Legal Basics,contracts rights protection agreements negotiations terms conditions,7.9
+32,847,Revenue Collection Systems,payments tracking reporting automation efficiency technology platforms,7.3
+33,392,Artist Team Building,management booking legal accounting publicity roles responsibilities,8.5
+34,615,Music Release Strategy,planning timing promotion coordination marketing distribution preparation,8.7
+35,938,Music Business Analytics,data analysis metrics tracking performance measurement improvement insights,7.6
+36,451,International Music Rights,global licensing distribution collection territory agreements regulations,7.8
+37,723,Music Investment Strategies,funding development growth capital planning returns sustainability,8.1
+38,166,Digital Music Distribution,platforms services comparison features benefits costs reach analytics,7.9
+39,594,Music Contracts Negotiation,terms conditions agreements negotiation strategy rights protection,8.2
+40,827,Music Industry Networking,connections relationships building maintenance opportunities growth development,8.8
+41,349,Artist Revenue Streams,income sources diversification optimization strategy planning growth,8.4
+42,672,Music Rights Management,ownership control protection licensing administration tracking documentation,7.7
+43,195,Digital Music Marketing,promotion strategy platforms content planning execution measurement,8.6
+44,528,Music Business Strategy,planning development execution measurement adaptation improvement growth,8.3
+45,863,Music Festival Booking,live performance events planning preparation strategy networking negotiation,8.9
+46,284,Music Publishing Rights,ownership control licensing administration collection protection management,7.8
+47,657,Music Business Finance,accounting budgeting planning investment returns analysis reporting,7.5
+48,931,Artist Development Strategy,career planning growth milestones objectives measurement improvement,8.7
+49,374,Music Industry Innovation,technology trends adaptation opportunities development future strategy,8.4
+50,716,Music Business Ethics,principles practices standards compliance responsibility integrity relationships,7.9
+51,425,Songwriting Monetization,composition rights splits collaborations registration royalties earnings management,8.3
+52,683,Music Video Production,visual content strategy budgeting direction promotion platforms distribution marketing,8.6
+53,912,Radio Promotion Strategy,airplay playlists outreach relationships programming strategy submission campaigns,7.8
+54,144,NFTs in Music,blockchain technology digital assets monetization strategy fan engagement collectibles,8.9
+55,537,Email Marketing for Musicians,newsletter strategy content planning segmentation automation engagement analytics,7.7
+56,863,Concert Production Management,event planning logistics coordination staff budgeting execution technical requirements,8.4
+57,291,Music Licensing for Film,synchronization rights negotiation placement supervision clearance fees contracts,8.2
+58,764,TikTok for Musicians,content creation strategy viral marketing trends engagement algorithms growth,9.0
+59,338,Music Press Relations,media outreach press releases pitching interviews coverage strategy relationships,8.1
+60,592,Venue Relationship Building,booking negotiations contracts technical requirements hospitality promotion marketing,7.9
+61,847,Music Blockchain Technology,cryptocurrency payments rights management distribution tracking innovation platforms,8.5
+62,193,Instagram Growth Strategy,content planning visual strategy reels engagement algorithms analytics growth,8.8
+63,629,Music Business Taxes,financial planning deductions accounting documentation compliance strategy savings,7.4
+64,475,Fan Club Management,membership strategy exclusive content engagement rewards programs administration analytics,8.3
+65,831,Music Distribution Analytics,data interpretation metrics optimization strategy performance tracking improvement,7.8
+66,267,Music Brand Partnerships,sponsorship deals negotiations contracts activation strategy relationship management,8.7
+67,594,Podcast Marketing Strategy,audio content distribution promotion cross-promotion engagement analytics growth,8.2
+68,938,Music Export Strategy,international markets distribution promotion touring licensing regulations compliance,7.9
+69,152,Virtual Concert Production,streaming technology production quality engagement monetization platform strategy,8.6
+70,783,YouTube Channel Growth,content strategy optimization algorithms engagement analytics promotion monetization,8.9
+71,446,Music Contest Management,submission process judging criteria promotion engagement prizes administration strategy,7.8
+72,692,Music Business Insurance,liability coverage asset protection risk management compliance documentation strategy,7.3
+73,235,Album Launch Strategy,release planning promotion coordination marketing timeline execution measurement,8.5
+74,867,Music Influencer Marketing,collaboration strategy outreach negotiation campaign planning execution measurement,8.4
+75,394,Gaming Music Licensing,placement strategy rights negotiation platform relationships technical requirements gaming,8.7
+76,728,Music Website Optimization,design functionality analytics user experience content strategy conversion optimization,7.9
+77,159,Music Collaboration Tools,technology platforms workflow management communication efficiency project coordination,7.6
+78,583,Music Industry Accounting,financial management bookkeeping reporting taxation compliance documentation strategy,7.4
+79,946,Music Rights Registration,documentation submission process tracking management administration compliance strategy,7.5
+80,271,Music Grant Writing,funding opportunities application strategy documentation presentation planning success,8.1
+81,634,Music Producer Agreements,contracts rights ownership revenue splits terms negotiation documentation strategy,8.2
+82,897,Music Festival Strategy,planning programming logistics coordination marketing promotion execution management,8.8
+83,142,Music Pitch Deck Creation,presentation strategy documentation planning investor relations business development,7.8
+84,576,Music Content Calendar,planning strategy coordination execution measurement adaptation improvement growth,7.7
+85,923,Music Merchandise Design,product development strategy pricing distribution promotion sales analytics growth,8.3
+86,368,Music Payment Systems,financial technology platforms integration management tracking reporting compliance,7.5
+87,715,Music Studio Management,booking operations maintenance client relations equipment management scheduling strategy,8.0
+88,289,Music Venue Operations,management logistics coordination staff scheduling maintenance safety compliance,7.9
+89,654,Music Copyright Defense,protection strategy enforcement documentation legal compliance risk management,7.6
+90,987,Music Business Mentoring,guidance development strategy planning career advancement networking relationships,8.7
+91,321,Music Crowdfunding Strategy,campaign planning promotion execution engagement rewards fulfillment management,8.4
+92,765,Music Performance Rights,licensing registration collection management tracking documentation compliance strategy,7.7
+93,432,Music Industry Contracts,agreement types negotiation terms documentation compliance risk management strategy,8.1
+94,876,Music Asset Management,catalog administration rights management tracking valuation strategy planning,7.8
+95,198,Music Publishing Software,technology platforms integration management tracking reporting efficiency strategy,7.5
+96,543,Music Event Insurance,coverage liability protection documentation compliance risk management strategy,7.2
+97,897,Music Revenue Tracking,financial management reporting analytics optimization strategy planning growth,7.8
+98,234,Music Business Valuation,assessment metrics analysis documentation strategy planning growth development,8.0
+99,678,Music Rights Acquisition,strategy negotiation valuation documentation compliance management planning,8.3
+100,345,Music Business Innovation,technology adaptation strategy planning development execution measurement growth,8.5
