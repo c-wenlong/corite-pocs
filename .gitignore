@@ -1,3 +1,5 @@
 .others/
 myvenv/
 .DS_Store
+.env
+src/assets/videos
