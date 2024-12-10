@@ -5,3 +5,4 @@ myvenv/
 src/assets/videos/
 src/assets/knowledge_base/
 .streamlit/
+__pycache__/
