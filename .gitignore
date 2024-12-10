@@ -2,4 +2,5 @@
 myvenv/
 .DS_Store
 .env
-src/assets/videos
+src/assets/videos/
+src/assets/knowledge_base/

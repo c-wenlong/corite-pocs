@@ -1,0 +1,312 @@
+{
+    "Boost Spotify bio": {
+        "category": "Content Creation",
+        "keywords": ["bio writing", "artist profile", "brand messaging", "Spotify optimization", "audience engagement", "platform optimization", "content strategy"],
+        "summary": "Generate an engaging, algorithm-friendly Spotify biography in under 30 minutes. Delivers a polished bio that connects with fans while boosting visibility on the platform.",
+        "intended_target_audience": {
+            "demographic": "Independent Artist",
+            "interests": ["platform optimization", "brand development", "fan engagement", "discoverability"],
+            "preferences": ["quick execution", "guided process"]
+        }
+    },
+    "Content pillars": {
+        "category": "Marketing",
+        "keywords": ["content strategy", "social media planning", "brand consistency", "audience engagement", "content themes", "content calendar", "engagement optimization"],
+        "summary": "Develop clear content pillars to structure social media presence and improve engagement. Creates a strategic framework for consistent, focused content creation across platforms.",
+        "intended_target_audience": {
+            "demographic": "Artist or Manager",
+            "interests": ["social media growth", "brand building", "content planning", "audience engagement"],
+            "preferences": ["strategic planning", "structured approach"]
+        }
+    },
+    "7 days of short video ideas": {
+        "category": "Content Creation",
+        "keywords": ["video content", "TikTok", "Reels", "content planning", "audience engagement", "hook writing", "short-form video"],
+        "summary": "Generate a week's worth of engaging short-form video ideas optimized for platforms like TikTok and Reels. Provides concrete video concepts with hooks, value propositions, and payoffs.",
+        "intended_target_audience": {
+            "demographic": "Content Creator",
+            "interests": ["social media growth", "content creation", "audience building", "video marketing"],
+            "preferences": ["creative guidance", "practical examples"]
+        }
+    },
+    "Create label pitch": {
+        "category": "Music Business",
+        "keywords": ["pitch writing", "label outreach", "professional communication", "artist development", "music industry", "business strategy"],
+        "summary": "Create a professional and compelling pitch to record labels. Delivers a customized pitch document that effectively communicates artist value proposition and potential.",
+        "intended_target_audience": {
+            "demographic": "Independent Artist",
+            "interests": ["label signing", "career advancement", "professional networking", "business development"],
+            "preferences": ["structured guidance", "professional formatting"]
+        }
+    },
+    "Label vs Publisher": {
+        "category": "Music Business",
+        "keywords": ["music publishing", "record labels", "rights management", "industry knowledge", "career planning", "business strategy"],
+        "summary": "Learn the key differences between record labels and music publishers. Provides clear understanding of roles, responsibilities, and how each entity can benefit an artist's career.",
+        "intended_target_audience": {
+            "demographic": "Emerging Artist",
+            "interests": ["industry knowledge", "career planning", "rights management", "business understanding"],
+            "preferences": ["educational content", "clear explanations"]
+        }
+    },
+    "Manager vs. A&R": {
+        "category": "Music Business",
+        "keywords": ["music management", "A&R", "industry roles", "career development", "professional relationships", "team building"],
+        "summary": "Understand the distinct roles of managers and A&R representatives in artist development. Clarifies responsibilities and helps identify current needs for career growth.",
+        "intended_target_audience": {
+            "demographic": "Independent Artist",
+            "interests": ["team building", "career development", "industry knowledge", "professional relationships"],
+            "preferences": ["informative content", "practical applications"]
+        }
+    },
+    "Royalties vs. Advances": {
+        "category": "Music Business",
+        "keywords": ["music finance", "royalty management", "advances", "revenue streams", "financial planning", "business strategy"],
+        "summary": "Master the fundamentals of royalties and advances in the music industry. Provides clear understanding of payment structures and financial planning strategies.",
+        "intended_target_audience": {
+            "demographic": "Artist or Manager",
+            "interests": ["financial management", "business planning", "revenue optimization", "contract understanding"],
+            "preferences": ["detailed information", "practical examples"]
+        }
+    },
+    "Who runs the tour": {
+        "category": "Music Business",
+        "keywords": ["tour management", "live music", "event planning", "team roles", "touring industry", "logistics"],
+        "summary": "Learn about key roles and responsibilities in tour management and execution. Clarifies the duties of booking agents, tour managers, and support staff.",
+        "intended_target_audience": {
+            "demographic": "Touring Artist",
+            "interests": ["live performance", "tour planning", "team management", "event coordination"],
+            "preferences": ["comprehensive overview", "role clarity"]
+        }
+    },
+    "Ask the manager": {
+        "category": "Career Planning",
+        "keywords": ["career advice", "artist development", "professional guidance", "strategy consultation", "industry insights"],
+        "summary": "Get personalized advice from an AI manager on various aspects of music career development. Provides strategic guidance and actionable recommendations.",
+        "intended_target_audience": {
+            "demographic": "Independent Artist",
+            "interests": ["career guidance", "strategic planning", "professional development"],
+            "preferences": ["personalized advice", "interactive discussion"]
+        }
+    },
+    "Brand profile": {
+        "category": "Marketing",
+        "keywords": ["brand development", "artist identity", "marketing strategy", "visual identity", "brand messaging", "audience connection"],
+        "summary": "Create a comprehensive brand profile including vision, values, and unique style. Delivers a complete brand document and presentation for consistent marketing.",
+        "intended_target_audience": {
+            "demographic": "Artist or Manager",
+            "interests": ["brand building", "marketing strategy", "visual identity", "professional presentation"],
+            "preferences": ["guided process", "visual results"]
+        }
+    },
+    "Viral hooks": {
+        "category": "Content Creation",
+        "keywords": ["hook writing", "viral content", "audience engagement", "social media", "content strategy", "creative writing"],
+        "summary": "Generate engaging hooks for social media content and promotional materials. Creates attention-grabbing openings for various marketing contexts.",
+        "intended_target_audience": {
+            "demographic": "Content Creator",
+            "interests": ["social media growth", "content creation", "audience engagement"],
+            "preferences": ["creative inspiration", "quick results"]
+        }
+    },
+    "Cover art inspiration": {
+        "category": "Visual Content",
+        "keywords": ["cover art", "visual design", "brand identity", "artwork creation", "visual marketing", "album packaging"],
+        "summary": "Generate creative ideas and direction for release cover art. Provides visual concepts aligned with artist brand and musical style.",
+        "intended_target_audience": {
+            "demographic": "Artist or Designer",
+            "interests": ["visual branding", "release planning", "creative direction"],
+            "preferences": ["visual inspiration", "creative guidance"]
+        }
+    },
+    "Create Spotify pitch": {
+        "category": "Marketing",
+        "keywords": ["Spotify for Artists", "playlist pitching", "music promotion", "platform strategy", "release marketing"],
+        "summary": "Create effective Spotify playlist submission pitches. Delivers optimized pitch text for increased playlist consideration chances.",
+        "intended_target_audience": {
+            "demographic": "Independent Artist",
+            "interests": ["playlist placement", "music promotion", "platform growth"],
+            "preferences": ["structured guidance", "platform-specific"]
+        }
+    },
+    "How 2 claim your Spotify profile": {
+        "category": "Platform Management",
+        "keywords": ["Spotify for Artists", "profile verification", "platform setup", "artist profile", "digital presence"],
+        "summary": "Step-by-step guide to claiming and verifying Spotify artist profile. Provides clear instructions for establishing official artist presence.",
+        "intended_target_audience": {
+            "demographic": "New Artist",
+            "interests": ["platform setup", "digital presence", "profile management"],
+            "preferences": ["step-by-step guidance", "basic instruction"]
+        }
+    },
+    "Blow up your song on TikTok": {
+        "category": "Marketing",
+        "keywords": ["TikTok marketing", "viral promotion", "social media strategy", "music promotion", "content strategy"],
+        "summary": "Learn effective strategies for promoting music on TikTok. Provides tactical approach to increasing visibility and engagement.",
+        "intended_target_audience": {
+            "demographic": "Independent Artist",
+            "interests": ["social media growth", "music promotion", "viral marketing"],
+            "preferences": ["practical strategies", "platform-specific"]
+        }
+    },
+    "Weekly check in": {
+        "category": "Career Planning",
+        "keywords": ["goal tracking", "progress monitoring", "motivation", "productivity", "career development"],
+        "summary": "Regular check-in system for monitoring progress and maintaining motivation. Provides structured reflection and goal adjustment.",
+        "intended_target_audience": {
+            "demographic": "Active Artist",
+            "interests": ["career development", "goal setting", "productivity"],
+            "preferences": ["regular engagement", "structured reflection"]
+        }
+    },
+    "Social media copy creation": {
+        "category": "Content Creation",
+        "keywords": ["copywriting", "social media", "engagement", "content strategy", "brand voice", "audience connection"],
+        "summary": "Generate engaging social media copy for various platforms and purposes. Delivers platform-optimized text that maintains brand voice.",
+        "intended_target_audience": {
+            "demographic": "Social Media Manager",
+            "interests": ["content creation", "audience engagement", "brand consistency"],
+            "preferences": ["creative assistance", "quick generation"]
+        }
+    },
+    "Release plan for singles": {
+        "category": "Marketing",
+        "keywords": ["release strategy", "campaign planning", "promotion timeline", "marketing coordination", "launch planning"],
+        "summary": "Create a comprehensive 30-day plan for single releases. Delivers detailed timeline and action items for successful release.",
+        "intended_target_audience": {
+            "demographic": "Artist or Manager",
+            "interests": ["release planning", "marketing strategy", "campaign management"],
+            "preferences": ["detailed planning", "structured timeline"]
+        }
+    },
+    "Promotion ideas": {
+        "category": "Marketing",
+        "keywords": ["promotional strategy", "marketing ideas", "audience engagement", "campaign planning", "creative promotion"],
+        "summary": "Generate creative promotional ideas for music releases and events. Provides unique marketing approaches and campaign concepts.",
+        "intended_target_audience": {
+            "demographic": "Marketing Manager",
+            "interests": ["creative marketing", "campaign planning", "audience growth"],
+            "preferences": ["creative ideation", "practical implementation"]
+        }
+    },
+    "Venue finder": {
+        "category": "Live Music",
+        "keywords": ["venue research", "tour planning", "live performance", "booking strategy", "performance venues"],
+        "summary": "Discover and evaluate potential performance venues in any city. Provides targeted venue suggestions based on artist size and style.",
+        "intended_target_audience": {
+            "demographic": "Touring Artist",
+            "interests": ["live performance", "tour planning", "venue booking"],
+            "preferences": ["location-specific", "practical results"]
+        }
+    },
+    "Vision": {
+        "category": "Career Planning",
+        "keywords": ["career vision", "goal setting", "artist development", "strategic planning", "brand direction"],
+        "summary": "Develop clear vision and goals for artist career direction. Creates foundational strategy document for long-term planning.",
+        "intended_target_audience": {
+            "demographic": "Emerging Artist",
+            "interests": ["career planning", "goal setting", "strategic development"],
+            "preferences": ["guided reflection", "structured planning"]
+        }
+    },
+    "Brand values": {
+        "category": "Marketing",
+        "keywords": ["brand development", "values definition", "artist identity", "brand authenticity", "marketing strategy"],
+        "summary": "Define core brand values for authentic artist positioning. Creates value framework for consistent brand communication.",
+        "intended_target_audience": {
+            "demographic": "Artist or Manager",
+            "interests": ["brand development", "marketing strategy", "authentic positioning"],
+            "preferences": ["guided process", "strategic thinking"]
+        }
+    },
+    "Unique style": {
+        "category": "Brand Development",
+        "keywords": ["artist identity", "visual style", "sound identity", "brand differentiation", "creative direction"],
+        "summary": "Define distinctive artistic style across sound and visuals. Creates comprehensive style guide for consistent brand expression.",
+        "intended_target_audience": {
+            "demographic": "Artist",
+            "interests": ["brand development", "creative direction", "visual identity"],
+            "preferences": ["creative exploration", "structured documentation"]
+        }
+    },
+    "Ask the social media coach": {
+        "category": "Social Media",
+        "keywords": ["social strategy", "platform optimization", "engagement growth", "content planning", "audience building"],
+        "summary": "Get personalized social media strategy advice and solutions. Provides platform-specific recommendations and content ideas.",
+        "intended_target_audience": {
+            "demographic": "Content Creator",
+            "interests": ["social media growth", "engagement optimization", "content strategy"],
+            "preferences": ["personalized guidance", "practical advice"]
+        }
+    },
+    "Press release for song": {
+        "category": "PR & Communications",
+        "keywords": ["press release writing", "media outreach", "professional communication", "release promotion", "PR strategy"],
+        "summary": "Create professional press releases for music releases. Delivers media-ready press release with key messaging and artist story.",
+        "intended_target_audience": {
+            "demographic": "PR Manager",
+            "interests": ["media relations", "release promotion", "professional writing"],
+            "preferences": ["structured writing", "professional format"]
+        }
+    },
+    "Release promo": {
+        "category": "Marketing",
+        "keywords": ["release promotion", "marketing strategy", "campaign planning", "audience engagement", "promotional tactics"],
+        "summary": "Develop effective promotional strategies for music releases. Creates targeted promotional plan with creative marketing approaches.",
+        "intended_target_audience": {
+            "demographic": "Marketing Manager",
+            "interests": ["release promotion", "campaign planning", "marketing strategy"],
+            "preferences": ["strategic planning", "creative tactics"]
+        }
+    },
+    "This week's trends": {
+        "category": "Content Creation",
+        "keywords": ["trend monitoring", "content strategy", "social media trends", "audience engagement", "viral content"],
+        "summary": "Stay updated on current social media trends and opportunities. Provides actionable ways to participate in trending content.",
+        "intended_target_audience": {
+            "demographic": "Content Creator",
+            "interests": ["trend participation", "content creation", "audience growth"],
+            "preferences": ["current information", "quick implementation"]
+        }
+    },
+    "Manifest your future": {
+        "category": "Career Planning",
+        "keywords": ["goal setting", "career vision", "manifestation", "personal development", "success planning"],
+        "summary": "Transform career aspirations into actionable goals and plans. Creates positive mindset and concrete steps toward success.",
+        "intended_target_audience": {
+            "demographic": "Aspiring Artist",
+            "interests": ["career development", "goal achievement", "personal growth"],
+            "preferences": ["positive guidance", "actionable steps"]
+        }
+    },
+    "Know your royalties": {
+        "category": "Music Business",
+        "keywords": ["royalty management", "revenue streams", "music finance", "rights management", "income tracking"],
+        "summary": "Master understanding of music royalties and revenue streams. Provides clear knowledge of payment types and collection methods.",
+        "intended_target_audience": {
+            "demographic": "Independent Artist",
+            "interests": ["financial management", "revenue optimization", "rights understanding"],
+            "preferences": ["detailed information", "practical application"]
+        }
+    },
+    "Wrapped promo 2024": {
+        "category": "Marketing",
+        "keywords": ["Spotify Wrapped", "fan engagement", "social media promotion", "year-end marketing", "audience interaction"],
+        "summary": "Maximize engagement opportunities around Spotify Wrapped season. Provides strategic approaches to leverage year-end listening data.",
+        "intended_target_audience": {
+            "demographic": "Artist or Manager",
+            "interests": ["fan engagement", "social media promotion", "platform optimization", "seasonal marketing"],
+            "preferences": ["timely strategies", "social media focus"]
+        }
+    },
+    "Find your flow": {
+        "category": "Onboarding",
+        "keywords": ["artist profile", "career assessment", "platform setup", "goal setting", "team building", "brand foundation", "personalization"],
+        "summary": "Complete initial artist profile setup and career assessment. Establishes foundational preferences, goals, and brand direction while customizing the platform experience.",
+        "intended_target_audience": {
+            "demographic": "New Artist or Manager",
+            "interests": ["platform setup", "career planning", "brand development", "team building"],
+            "preferences": ["guided onboarding", "comprehensive setup"]
+        }
+    }
+}
