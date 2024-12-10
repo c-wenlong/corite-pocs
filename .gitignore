@@ -4,3 +4,4 @@ myvenv/
 .env
 src/assets/videos/
 src/assets/knowledge_base/
+.streamlit/
