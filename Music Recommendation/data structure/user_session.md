@@ -10,16 +10,16 @@ classDiagram
         +Object chartmetric_summary
         +Object cmStatistics
         +String country
-        +String[] skills
+        +String skills
         +String social_media_attitude
         +String user_role
     }
 
     class BrandProfile {
-        +String[] aspirations
-        +Object profile
+        +String aspirations
         +String unique_style
-        +String[] values
+        +String values
+        +String profile
     }
 
     class Session {
@@ -38,7 +38,7 @@ classDiagram
     User -- BrandProfile : has
     Session -- TargetAudience : targets
 
-    note for User "Represents platform user profile"
-    note for Session "Represents recommendable items"
+    note for User "Represents Aflow Users"
+    note for Session "Represents Recommendable Items"
 
 :::
