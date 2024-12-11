@@ -16,8 +16,8 @@ qdrant_client = QdrantClient(
 
 from openai import OpenAI
 
-OPENAI_API_KEY = st.secrets["OPENAI"]["OPENAI_API_KEY"]
-openai_client = OpenAI(OPENAI_API_KEY)
+openai_client = OpenAI()
+openai_client.api_key = st.secrets["OPENAI"]["OPENAI_API_KEY"]
 
 
 def text_to_embedding(text):
