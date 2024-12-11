@@ -80,7 +80,7 @@ def display_history():
                    </p>
                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
                        {' '.join([
-                           f'<span style="background: #f0f0f0; padding: 2px 8px; border-radius: 12px; font-size: 14px; color: #666;">{chip}</span>'
+                           f'<span style="background: #f0f0f0; padding: 2px 8px; border-radius: 12px; font-size: 14px; font-weight: bold; color: #666;">{chip}</span>'
                            for chip in response
                        ])}
                    </div>
