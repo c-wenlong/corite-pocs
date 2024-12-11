@@ -8,6 +8,7 @@ from qdrant_client import QdrantClient, models
 
 QDRANT_URL = st.secrets["QDRANT"]["QDRANT_URL"]
 QDRANT_API_KEY = st.secrets["QDRANT"]["QDRANT_API_KEY"]
+QDRANT_COLLECTION_NAME = st.secrets["QDRANT"]["COLLECTION_NAME"]
 
 qdrant_client = QdrantClient(
     url=QDRANT_URL,
@@ -28,7 +29,7 @@ def text_to_embedding(text):
 
 
 def fetch_recommended_sessions(
-    artist_profile, collection_name=os.getenv("COLLECTION_NAME"), limit=5
+    artist_profile, collection_name=QDRANT_COLLECTION_NAME, limit=5
 ):
     artist_embedding = text_to_embedding(artist_profile)
     similar_sessions = qdrant_client.search(
@@ -50,7 +51,7 @@ def read_json(file_path=Path("src/assets/datasets/session_metadata.json")):
 '''
 # Creates qdrant vector database instance
 qdrant_client.create_collection(
-    collection_name=os.getenv("COLLECTION_NAME"),
+    collection_name=QDRANT_COLLECTION_NAME,
     vectors_config=models.VectorParams(size=1536, distance=models.Distance.COSINE)
 )
 
@@ -84,7 +85,7 @@ from datetime import datetime
 
 for idx, (session_name, session_data) in  enumerate(session_embeddings.items()):
 	qdrant_client.upsert(
-		collection_name=os.getenv("COLLECTION_NAME"),
+		collection_name=QDRANT_COLLECTION_NAME,
 		points=[
 			models.PointStruct(
 				id=idx,
