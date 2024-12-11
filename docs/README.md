@@ -7,3 +7,5 @@ This this is the main search engine, as of now, it does not search when you pres
 ![Recommendation Cards](./assets/recommendation_cards.png)
 
 On the right, your previous prompts are also saved, together with the top 5 sessions that was recommended, to ensure ease of tracking and testing.
+
+![Previous Searches](./assets/previous_searches.png)
