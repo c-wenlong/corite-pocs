@@ -1,86 +1,50 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# LLM takes in user data & recommends "sessions" to the users -> pass into vector database to fetch real sessions. We first initialise our API Keys.
-
-# In[42]:
-
-
+import streamlit as st
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-
-# Then, we will initialise our vector DB client, the first query will take about 20 seconds as there will be authentication, subsequent queries will be much shorter.
-
-# In[43]:
-
-
 from qdrant_client import QdrantClient, models
 
-QDRANT_URL=os.getenv("QDRANT_URL")
-QDRANT_API_KEY=os.getenv("QDRANT_API_KEY")
+QDRANT_URL = st.secrets["QDRANT"]["QDRANT_URL"]
+QDRANT_API_KEY = st.secrets["QDRANT"]["QDRANT_API_KEY"]
 
 qdrant_client = QdrantClient(
-	url=QDRANT_URL, 
-	api_key=QDRANT_API_KEY,
+    url=QDRANT_URL,
+    api_key=QDRANT_API_KEY,
 )
 
-print(qdrant_client.get_collections())
-
-
-# Now, we create a method to embed the artist's profile and a fetch method to fetch the data.
-
-# In[44]:
-
-
 from openai import OpenAI
+
 openai_client = OpenAI()
-openai_client.api_key=os.getenv("OPENAI_API_KEY")
-
-
-# In[51]:
+openai_client.api_key = st.secrets["OPENAI"]["OPENAI_API_KEY"]
 
 
 def text_to_embedding(text):
     embeddings = openai_client.embeddings.create(
-        model="text-embedding-3-small",
-        input=text,
-        encoding_format="float"
+        model="text-embedding-3-small", input=text, encoding_format="float"
     )
     return embeddings.data[0].embedding
 
-def fetch_recommended_sessions(artist_profile, collection_name=os.getenv("COLLECTION_NAME"), limit=5):
+
+def fetch_recommended_sessions(
+    artist_profile, collection_name=os.getenv("COLLECTION_NAME"), limit=5
+):
     artist_embedding = text_to_embedding(artist_profile)
     similar_sessions = qdrant_client.search(
-        collection_name=collection_name,
-        query_vector=artist_embedding,
-        limit=limit
+        collection_name=collection_name, query_vector=artist_embedding, limit=limit
     )
     return [session.payload["session_name"] for session in similar_sessions]
-
-
-# Now lets test the accuracy of these queries. First, we upload the session metadata as embeddings into our vector database.
-
-# In[46]:
 
 
 import json
 from pathlib import Path
 
-def read_json(file_path=Path('src/assets/datasets/session_metadata.json')):
-	with open(file_path, 'r') as file:
-		sessions = json.load(file)
-	return sessions
 
-sessions = read_json()
-print(sessions['Boost Spotify bio'])
-
-
-# ## DO THIS ONE TIME, TO INITIALISE DATABASE
-
-# In[47]:
+def read_json(file_path=Path("src/assets/datasets/session_metadata.json")):
+    with open(file_path, "r") as file:
+        sessions = json.load(file)
+    return sessions
 
 
 '''
@@ -92,6 +56,7 @@ qdrant_client.create_collection(
 
 # Convert the session metadata into embeddings
 session_embeddings = {}
+sessions = read_json()
 
 # Iterate through each session
 for session_name, session_data in sessions.items():
@@ -135,13 +100,7 @@ for idx, (session_name, session_data) in  enumerate(session_embeddings.items()):
 '''
 
 
-# Now that the vector database has been successfully setup, lets test the similarity of a session with other sessions.
-
-# In[53]:
-
-
-test_prompt = 'The artist wants a session to boost his spotify bio, so that he can gain a larger following on spotify, he also wants to create a press release for his next single, coming out in just 2 weeks.'
-recommendations = fetch_recommended_sessions(test_prompt)
-
-print(recommendations)
-
+def test():
+    test_prompt = "The artist wants a session to boost his spotify bio, so that he can gain a larger following on spotify, he also wants to create a press release for his next single, coming out in just 2 weeks."
+    recommendations = fetch_recommended_sessions(test_prompt)
+    print(recommendations)
