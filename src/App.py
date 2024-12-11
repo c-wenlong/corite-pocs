@@ -6,7 +6,7 @@ def main():
     initalise_page_config()
     initialise_session_state()
 
-    search, history = st.columns([4, 2])
+    search, history = st.columns([3, 2])
     with search:
         st.markdown(
             "#### Describe your needs as an artist and I will recommend a session for you."
@@ -56,7 +56,9 @@ def recommendation_engine():
                             """,
                             unsafe_allow_html=True,
                         )
-            st.session_state["query_history"].append(prompt)
+            st.session_state["query_history"].append(
+                {"prompt": prompt, "response": response}
+            )
         else:
             st.warning("Please enter your needs first.")
 
@@ -65,17 +67,25 @@ def display_history():
     # Display query history in a simple card
     if st.session_state.query_history:
         st.markdown("### Previous Searches")
-        for idx, query in enumerate(reversed(st.session_state.query_history), 1):
+        for idx, entry in enumerate(reversed(st.session_state.query_history), 1):
+            prompt = entry["prompt"]
+            response = entry["response"]
             st.markdown(
                 f"""
-                <div style="
-                    padding: 10px 0;
-                    border-bottom: 1px solid #eee;">
-                    <p style="margin: 0; color: #666;">
-                        {idx}. {query}
-                    </p>
-                </div>
-            """,
+               <div style="
+                   padding: 12px 0;
+                   border-bottom: 1px solid #eee;">
+                   <p style="margin: 0 0 8px 0; color: #666;">
+                       {idx}. {prompt}
+                   </p>
+                   <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                       {' '.join([
+                           f'<span style="background: #f0f0f0; padding: 2px 8px; border-radius: 12px; font-size: 14px; color: #666;">{chip}</span>'
+                           for chip in response
+                       ])}
+                   </div>
+               </div>
+               """,
                 unsafe_allow_html=True,
             )
     else:
