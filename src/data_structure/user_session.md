@@ -1,6 +1,7 @@
 ::: mermaid
 
 classDiagram
+
     class User {
         +String artist_name
         +String artist_type

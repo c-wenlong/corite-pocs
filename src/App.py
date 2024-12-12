@@ -1,5 +1,6 @@
 import streamlit as st
 from services import fetch_recommended_sessions
+from services import user_to_vectordb_prompt
 
 
 def main():
@@ -37,7 +38,8 @@ def recommendation_engine():
     if st.button("Get Recommendations"):
         if prompt:
             with st.spinner("Finding recommendations..."):
-                response = fetch_recommended_sessions(prompt)
+                improved_prompt = user_to_vectordb_prompt(prompt)
+                response = fetch_recommended_sessions(improved_prompt)
 
                 # Create cards for each recommendation
                 for session in response:
