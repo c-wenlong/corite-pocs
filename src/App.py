@@ -1,6 +1,7 @@
 import streamlit as st
 from services import fetch_recommended_sessions
 from services import user_to_vectordb_prompt
+import os
 
 
 def main():
@@ -63,6 +64,47 @@ def recommendation_engine():
             )
         else:
             st.warning("Please enter your needs first.")
+
+    if st.button("Load Artist Data"):
+        artist = load_json()
+        with st.spinner("Finding recommendations..."):
+            improved_prompt = user_to_vectordb_prompt(artist)
+            response = fetch_recommended_sessions(improved_prompt)
+
+            # Create cards for each recommendation
+            for session in response:
+                with st.container():
+                    st.markdown(
+                        f"""
+                        <div style="
+                            padding: 20px;
+                            border-radius: 10px;
+                            margin: 10px 0px;
+                            background-color: #f0f2f6;
+                            border-left: 5px solid #ff4b4b;
+                            box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+                            <h3 style="margin: 0; color: #333;">{session}</h3>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+        st.session_state["query_history"].append(
+            {"prompt": improved_prompt, "response": response}
+        )
+
+
+def load_json(filepath="./src/assets/artists/justin_bieber.json"):
+    try:
+        # Check if file exists
+        if not os.path.exists(filepath):
+            raise FileNotFoundError(f"The file {filepath} does not exist")
+
+        # Read file as string
+        with open(filepath, "r", encoding="utf-8") as file:
+            return file.read()
+
+    except Exception as e:
+        raise Exception(f"Error reading {filepath}: {str(e)}")
 
 
 def display_history():
