@@ -1,4 +1,4 @@
-::: mermaid
+```mermaid
 
 classDiagram
 
@@ -8,11 +8,11 @@ classDiagram
         +String bio
         +BrandProfile brand
         +String career_level
-        +Object chartmetric_summary
-        +Object cmStatistics
+        +JSON chartmetric_summary
+        +JSON cmStatistics
         +String country
-        +String skills
-        +String social_media_attitude
+        +String[] skills
+        +String[] social_media_attitude
         +String user_role
     }
 
@@ -42,4 +42,4 @@ classDiagram
     note for User "Represents Aflow Users"
     note for Session "Represents Recommendable Items"
 
-:::
+```
