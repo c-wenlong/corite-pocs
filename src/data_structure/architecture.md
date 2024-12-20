@@ -2,49 +2,57 @@
 
 graph TD
     %% Main Module
-    RecModule[RecommendationsModule]
-    RecService[RecommendationsService]
+    subgraph Recommendations
+      RecModule[RecommendationsModule]
+      RecService[RecommendationsService]
+    end
 
-    %% Dependencies
-    LLMModule[LLMModule]
-    LLMFactory[LLMFactory]
-    QDrant[(QDrant Vector DB)]
+    %% Qdrant Module
+    subgraph Qdrant
+      QdModule[QdrantModule]
+      QdService[QdrantService]
+    end
 
-    %% Repositories
+    %% LLM Module
+    subgraph LLM
+      LLMModule[LLMModule]
+      LLMFactory[LLMFactory]
+    end
+
+    %% Databases
     UserRepo[(UserRepository)]
     ArtistRepo[(ArtistRepository)]
+    VectorDB[(QDrant Vector DB)]
 
     %% Handlers and Components
     TickHandler[FindYourFlowHandler]
     Prompts[Prompt Templates]
-    DTOs[DTOs]
 
     %% Entities
     UserEntity[User Entity]
     ArtistEntity[Artist Entity]
 
     %% Module Dependencies
-    RecModule --> RecService
-    RecModule --> LLMModule
-    RecModule --> TickHandler
+    Recommendations --> |Transform User/Artist Data to Vector Query| LLM
+    Recommendations <--> |Fetch Vectors| Qdrant
 
     %% Data Flow
-    RecService --> UserRepo
-    RecService --> ArtistRepo
-    RecService --> LLMFactory
+    Recommendations <--> |Fetch User Data| UserRepo
+    Recommendations <--> |Fetch Artist Data| ArtistRepo
+
+    %% QDrant query
     LLMFactory --> VectorQuery{Vector Query}
-    VectorQuery --> QDrant
-    QDrant --> SessionIDs[Session IDs Array]
+    Prompts --> LLMFactory
+    VectorQuery --> VectorDB
+    VectorDB --> |Is From| QdService
+    QdService --> |Returns| SessionIDs[Session IDs Array]
 
     %% Repository Dependencies
     UserRepo --> UserEntity
     ArtistRepo --> ArtistEntity
 
     %% Handler Dependencies
-    TickHandler --> RecService
-
-    %% LLM Dependencies
-    LLMModule --> LLMFactory
+    TickHandler --> Recommendations
 
     %% Processing Steps
     subgraph Processing
