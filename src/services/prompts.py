@@ -1,4 +1,4 @@
-system = """
+SYSTEM = """
 SYSTEM CONTEXT:
 You are an AI agent specializing in music industry career development. Your role is to analyze artist profiles and identify their most relevant needs and potential actions that align with educational/development sessions.
 
