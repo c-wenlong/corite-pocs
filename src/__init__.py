@@ -1,1 +1,1 @@
-from .services.vectordb import *  # Only if you want to expose everything
+from .services import *  # Only if you want to expose everything
