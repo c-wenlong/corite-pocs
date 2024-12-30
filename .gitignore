@@ -1,9 +1,8 @@
 .others/
-myvenv/
+.venv/
 .DS_Store
 .env
-src/assets/videos/
-src/assets/knowledge_base/
+**/videos/
 .streamlit/
 __pycache__/
 .sandbox/

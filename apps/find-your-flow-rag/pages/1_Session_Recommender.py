@@ -93,7 +93,7 @@ def recommendation_engine():
         )
 
 
-def load_json(filepath="./src/assets/artists/justin_bieber.json"):
+def load_json(filepath="./apps/find-your-flow-rag/assets/artists/justin_bieber.json"):
     try:
         # Check if file exists
         if not os.path.exists(filepath):
