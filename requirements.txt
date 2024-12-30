@@ -4,3 +4,4 @@ streamlit
 openai
 jupyter
 pathlib
+pandas
