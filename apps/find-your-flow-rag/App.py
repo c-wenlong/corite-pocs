@@ -9,7 +9,7 @@ def main():
         '''
         Here lies all projects related to Corite Aflow, all of which are proof of concept for real features to be implemented later on. \n
         #### Session Recommender: Recommends sessions to users based on user prompt or artist data. \n
-        #### Text To Video: Generate videos from text
+        #### Session Graph Visualizer: Visualizes all sessions in a graph format, mapping all dependencies, semantic similarities and traversal histories. \n
         '''
     )
 

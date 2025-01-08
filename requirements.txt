@@ -5,3 +5,6 @@ openai
 jupyter
 pathlib
 pandas
+networkx
+neo4j
+scikit-learn
