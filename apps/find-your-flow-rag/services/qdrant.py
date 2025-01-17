@@ -1,6 +1,6 @@
 import streamlit as st
 from qdrant_client import QdrantClient, models
-from .openai import text_to_embedding
+from .open_ai import text_to_embedding
 from .file_manager import read_json
 
 QDRANT_URL = st.secrets["QDRANT"]["QDRANT_URL"]
@@ -23,7 +23,7 @@ def fetch_recommended_sessions(
     return [session.payload["session_name"] for session in similar_sessions]
 
 
-def initialise_vectordb(collection_name, qdrant_client):
+def initialise_qdrant(collection_name, qdrant_client):
     # Creates qdrant vector database instance
     qdrant_client.create_collection(
         collection_name=collection_name,
@@ -38,21 +38,29 @@ def initialise_vectordb(collection_name, qdrant_client):
     for session_name, session_data in sessions.items():
         # Convert session data to string for embedding
         session_text = f"""
-    Category: {session_data['category']}
-    Keywords: {', '.join(session_data['keywords'])}
-    Summary: {session_data['summary']}
-    Target Audience: {session_data['intended_target_audience']['demographic']}
-    Interests: {', '.join(session_data['intended_target_audience']['interests'])}
-    Preferences: {', '.join(session_data['intended_target_audience']['preferences'])}
-    """
+        Category: {session_data['category']}
+        Keywords: {', '.join(session_data['keywords'])}
+        Summary: {session_data['summary']}
+        Target Audience: {session_data['intended_target_audience']['demographic']}
+        Interests: {', '.join(session_data['intended_target_audience']['interests'])}
+        Preferences: {', '.join(session_data['intended_target_audience']['preferences'])}
+        """
 
         # Get embedding
         embedding = text_to_embedding(session_text)
 
         # Store result
         session_embeddings[session_name] = {
-            "metadata": session_data,
-            "embedding": embedding,
+          'id': session_data['id'],
+          'metadata': {
+            'category': session_data['category'],
+            'keywords': session_data['keywords'],
+            'summary': session_data['summary'],
+            'intended_target_audience': session_data['intended_target_audience'],
+            'interests': session_data['intended_target_audience']['interests'],
+            'preferences': session_data['intended_target_audience']['preferences']
+          },
+          'embedding': embedding
         }
 
     # Upload vector embeddings into QDRANT DB
@@ -63,7 +71,7 @@ def initialise_vectordb(collection_name, qdrant_client):
             collection_name=collection_name,
             points=[
                 models.PointStruct(
-                    id=idx,
+                    id=session_data["id"],
                     payload={
                         "session_name": session_name,
                         "metadata": session_data["metadata"],
@@ -73,6 +81,9 @@ def initialise_vectordb(collection_name, qdrant_client):
                 )
             ],
         )
+
+
+initialise_qdrant(QDRANT_COLLECTION_NAME, qdrant_client)
 
 
 def test():

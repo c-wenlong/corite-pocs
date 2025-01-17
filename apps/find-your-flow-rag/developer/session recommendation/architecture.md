@@ -22,7 +22,7 @@ graph TD
     %% Databases
     UserRepo[(UserRepository)]
     ArtistRepo[(ArtistRepository)]
-    VectorDB[(QDrant Vector DB)]
+    qdrant[(QDrant Vector DB)]
 
     %% Handlers and Components
     TickHandler[FindYourFlowHandler]
@@ -43,8 +43,8 @@ graph TD
     %% QDrant query
     LLMFactory --> VectorQuery{Vector Query}
     Prompts --> LLMFactory
-    VectorQuery --> VectorDB
-    VectorDB --> |Is From| QdService
+    VectorQuery --> qdrant
+    qdrant --> |Is From| QdService
     QdService --> |Returns| SessionIDs[Session IDs Array]
 
     %% Repository Dependencies

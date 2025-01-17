@@ -1,6 +1,10 @@
 import streamlit as st
-from services import fetch_recommended_sessions
-from services import user_to_qdrant_prompt
+from services import (
+    fetch_recommended_sessions,
+    user_to_qdrant_prompt,
+    sessions_to_flow,
+    parse_array_str,
+)
 import os
 
 
@@ -25,14 +29,14 @@ def initalise_page_config():
 
 
 def initialise_session_state():
-    if "query_history_session" not in st.session_state:
-        st.session_state["query_history_session"] = []
+    if "query_history_flow" not in st.session_state:
+        st.session_state["query_history_flow"] = []
 
 
 def recommendation_engine():
     # Create input field
     prompt = st.text_input(
-        "Try using the prompt below! \n\n The artist wants a session to boost his spotify bio, so that he can gain a larger following on spotify, he also wants to create a press release for his next single, coming out in just 2 weeks."
+        "Try using the prompt below! \n\n The artist wants a flow to boost his spotify bio, so that he can gain a larger following on spotify, he also wants to create a press release for his next single, coming out in just 2 weeks."
     )
 
     # Add a submit button
@@ -41,9 +45,13 @@ def recommendation_engine():
             with st.spinner("Finding recommendations..."):
                 improved_prompt = user_to_qdrant_prompt(prompt)
                 response = fetch_recommended_sessions(improved_prompt)
+                flow = sessions_to_flow(response)
+                flow_array = parse_array_str(flow)
 
                 # Create cards for each recommendation
+                session_id = 0
                 for session in response:
+                    session_id += 1
                     with st.container():
                         st.markdown(
                             f"""
@@ -54,12 +62,12 @@ def recommendation_engine():
                                 background-color: #f0f2f6;
                                 border-left: 5px solid #ff4b4b;
                                 box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
-                                <h3 style="margin: 0; color: #333;">{session}</h3>
+                                <h3 style="margin: 0; color: #333;">{session_id}. {session}</h3>
                             </div>
                             """,
                             unsafe_allow_html=True,
                         )
-            st.session_state["query_history_session"].append(
+            st.session_state["query_history_flow"].append(
                 {"prompt": prompt, "response": response}
             )
         else:
@@ -70,9 +78,11 @@ def recommendation_engine():
         with st.spinner("Finding recommendations..."):
             improved_prompt = user_to_qdrant_prompt(artist)
             response = fetch_recommended_sessions(improved_prompt)
+            flow = sessions_to_flow(response)
+            flow_array = parse_array_str(flow)
 
             # Create cards for each recommendation
-            for session in response:
+            for session in flow_array:
                 with st.container():
                     st.markdown(
                         f"""
@@ -88,7 +98,7 @@ def recommendation_engine():
                         """,
                         unsafe_allow_html=True,
                     )
-        st.session_state["query_history_session"].append(
+        st.session_state["query_history_flow"].append(
             {"prompt": improved_prompt, "response": response}
         )
 
@@ -109,9 +119,9 @@ def load_json(filepath="./apps/find-your-flow-rag/assets/artists/justin_bieber.j
 
 def display_history():
     # Display query history in a simple card
-    if st.session_state.query_history_session:
+    if st.session_state.query_history_flow:
         st.markdown("### Previous Searches")
-        for idx, entry in enumerate(reversed(st.session_state.query_history_session), 1):
+        for idx, entry in enumerate(reversed(st.session_state.query_history_flow), 1):
             prompt = entry["prompt"]
             response = entry["response"]
             st.markdown(
