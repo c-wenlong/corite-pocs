@@ -1,105 +1,86 @@
 ```mermaid
-flowchart TB
-    subgraph Input Layer
-        S[Sessions]
-        U[Users]
-        C[Categories]
+graph TD
+    %% Main Module
+    subgraph Recommendations
+      RecService[RecommendationsService]
     end
 
-    subgraph Embedding Pipeline
-        direction TB
-        EP[Embedding Processor]
-        EC[(Embedding Cache)]
-
-        subgraph OpenAI Service
-            OAI{OpenAI API}
-            EM[text-embedding-3-large]
-        end
-
-        subgraph Fallback Service
-            FM[Local MiniLM Model]
-        end
+    %% Qdrant Module
+    subgraph Qdrant
+      QdService[QdrantService]
     end
 
-    subgraph Graph Layer
-        direction TB
-        GB[Graph Builder]
-        GC[(Graph Cache)]
-
-        subgraph Graph Processing
-            CS[Similarity Calculator]
-            EW[Edge Weighter]
-            PT[Path Traverser]
-        end
+    %% LLM Module
+    subgraph LLM
+      LLMFactory[LLMFactory]
     end
 
-    subgraph Recommendation Engine
-        direction TB
-        RC[Recommendation Controller]
+    %% Databases
+    UserRepo[(UserRepository)]
+    ArtistRepo[(ArtistRepository)]
+    qdrant[(QDrant Vector DB)]
 
-        subgraph Ranking
-            SR[Session Ranker]
-            PR[Path Ranker]
-            AR[Audience Matcher]
-        end
+    %% Handlers and Components
+    TickHandler[Fetch Recommendations]
+    Prompts[Prompt Templates]
 
-        subgraph Filters
-            CF[Category Filter]
-            PF[Progression Filter]
-            DF[Diversity Filter]
-        end
+    %% Entities
+    UserEntity[User Entity]
+    ArtistEntity[Artist Entity]
+
+    %% Module Dependencies
+    Recommendations --> |Transform User/Artist Data to Vector Query| LLM
+    Recommendations <--> |Fetch Vectors| Qdrant
+
+    %% Data Flow
+    Recommendations <--> |Fetch User Data| UserRepo
+    Recommendations <--> |Fetch Artist Data| ArtistRepo
+
+    %% QDrant query
+    LLMFactory --> VectorQuery{Vector Query}
+    Prompts --> LLMFactory
+    VectorQuery --> qdrant
+    qdrant --> |Is From| Qdrant
+    Qdrant --> |Returns| recommendedSessions[Session ID and Score Array]
+
+    %% Repository Dependencies
+    UserRepo --> UserEntity
+    ArtistRepo --> ArtistEntity
+
+    %% Handler Dependencies
+    TickHandler --> Recommendations
+
+    %% Processing Steps
+    subgraph Processing
+        UserArtistData[User/Artist Data] --> |Transform| VectorQuery
     end
 
-    subgraph API Layer
-        API[REST API]
-        RQ[Request Queue]
-        RC[(Result Cache)]
+    %% Session Decision Pipeline
+    defaultSessions[Default Sessions]
+    allSessions[All Sessions]
+    defaultSession
+    subgraph Session Decision
+        recommendedSessions --> allSessions
+        defaultSessions --> allSessions
     end
+    allSessions --> |LLM Decision Making| LLM
+    LLM --> |LLM creates a Flow| Flow["Flow"]
 
-    %% Connections
-    S --> EP
-    U --> EP
-    C --> EP
-
-    EP --> OAI
-    OAI --> EM
-    EM --> EP
-    EP --> EC
-
-    EP --> FM
-    FM --> EP
-
-    EP --> GB
-    GB --> GC
-
-    GB --> CS
-    CS --> EW
-    EW --> PT
-
-    PT --> SR
-    PT --> PR
-    U --> AR
-
-    SR --> CF
-    PR --> PF
-    CF --> DF
-    PF --> DF
-    AR --> DF
-
-    DF --> API
-    API --> RQ
-    API --> RC
+    RecService --> UserArtistData
 
     %% Styling
-    classDef input fill:#f9f,stroke:#333,stroke-width:2px
-    classDef processor fill:#bfb,stroke:#333,stroke-width:2px
-    classDef storage fill:#bbf,stroke:#333,stroke-width:2px
-    classDef api fill:#fbb,stroke:#333,stroke-width:2px
-    classDef service fill:#ffb,stroke:#333,stroke-width:2px
+    classDef module fill:#e1f5fe,stroke:#01579b
+    classDef service fill:#e8f5e9,stroke:#1b5e20
+    classDef repo fill:#fce4ec,stroke:#880e4f
+    classDef entity fill:#f3e5f5,stroke:#4a148c
+    classDef component fill:#fff3e0,stroke:#e65100
+    classDef processing fill:#fff8e1,stroke:#f57f17
 
-    class S,U,C input
-    class EP,GB,CS,EW,PT,SR,PR,AR,CF,PF,DF processor
-    class EC,GC,RC storage
-    class API,RQ api
-    class OAI,EM,FM service
+    class RecModule,LLMModule module
+    class RecService,LLMFactory service
+    class UserRepo,ArtistRepo,QDrant repo
+    class UserEntity,ArtistEntity entity
+    class TickHandler,Prompts,DTOs component
+    class Processing,UserArtistData,VectorQuery processing
+
 ```
