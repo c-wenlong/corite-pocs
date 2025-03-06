@@ -34,9 +34,16 @@ classDiagram
     +String[] dependsOn
   }
 
-  Session --> Payload: summarized into
+  Session --> QDrantMetadata: summarized into
 
   class Payload {
+    +string sessionName
+    +metadata QDrantMetadata
+  }
+
+  Payload --> QDrantMetadata: contains
+
+  class QDrantMetadata {
     +String category
     +String summary
     +String[] keywords
@@ -80,14 +87,14 @@ classDiagram
     +getRelatedSessions()
   }
 
-  Neo4jSession --> Metadata: has
+  Neo4jSession --> Neo4jMetadata: has
 
-  class Metadata {
+  class Neo4jMetadata {
     +String category
     +List~String~ keywords
     +Float[] topKeywordWeights
   }
 
   Neo4jSession -- QdrantSession: similar
-  Payload -- Metadata: similar
+  Payload -- Neo4jMetadata: similar
 ```
